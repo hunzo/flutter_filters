@@ -36,7 +36,7 @@ class _FilterFlutterState extends State<FilterFlutter> {
     return MaterialApp(
         home: GestureDetector(
       onTap: () {
-        print("Gesture detect!!");
+        // print("Gesture detect!!");
         FocusScope.of(context).requestFocus(FocusScopeNode());
       },
       child: Scaffold(
@@ -46,21 +46,23 @@ class _FilterFlutterState extends State<FilterFlutter> {
             style: TextStyle(fontFamily: 'Prompt'),
           ),
           centerTitle: true,
+          backgroundColor: Colors.blueGrey[600],
         ),
         body: Column(
           children: <Widget>[
             SizedBox(
-              height: 8.0,
+              height: 5.0,
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(30.0),
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: "Search User",
-                  icon: Icon(
-                    Icons.search_rounded,
-                    // size: 50.0,
-                  ),
+                  suffixIcon: Icon(Icons.search_rounded),
+                  // icon: Icon(
+                  //   Icons.search_rounded,
+                  //   // size: 50.0,
+                  // ),
 
                   // border: OutlineInputBorder(),
                 ),
@@ -88,13 +90,13 @@ class _FilterFlutterState extends State<FilterFlutter> {
             ),
             Expanded(
                 child: ListView.builder(
-                    padding: EdgeInsets.all(20.0),
+                    padding: EdgeInsets.all(15.0),
                     itemCount: _filterUser.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
-                        elevation: 10,
+                        elevation: 20,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          // mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Padding(
                               padding: EdgeInsets.all(15.0),
@@ -116,6 +118,9 @@ class _FilterFlutterState extends State<FilterFlutter> {
                                       style: TextStyle(
                                         color: Colors.redAccent,
                                       )),
+                                  SizedBox(
+                                    height: 3,
+                                  ),
                                   Text(
                                     _filterUser[index].readerId,
                                     style: TextStyle(color: Colors.grey[600]),
@@ -126,11 +131,6 @@ class _FilterFlutterState extends State<FilterFlutter> {
                                 ],
                               ),
                             ),
-                            Icon(
-                              Icons.account_circle_outlined,
-                              color: Colors.grey[500],
-                              size: 60.0,
-                            )
                           ],
                         ),
                       );
