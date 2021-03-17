@@ -41,7 +41,10 @@ class _FilterFlutterState extends State<FilterFlutter> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Filters'),
+          title: Text(
+            'Flutter Filters',
+            style: TextStyle(fontFamily: 'Prompt'),
+          ),
           centerTitle: true,
         ),
         body: Column(
@@ -89,7 +92,7 @@ class _FilterFlutterState extends State<FilterFlutter> {
                     itemCount: _filterUser.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
-                        elevation: 4,
+                        elevation: 10,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -102,26 +105,31 @@ class _FilterFlutterState extends State<FilterFlutter> {
                                   Text(
                                     _filterUser[index].username,
                                     style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
+                                        fontSize: 20,
+                                        color: Colors.grey[800],
+                                        fontFamily: 'Kanit'),
                                   ),
                                   SizedBox(
-                                    height: 6,
+                                    height: 5,
                                   ),
-                                  Text(
-                                    _filterUser[index].datetime.toString(),
-                                    style: TextStyle(color: Colors.grey[600]),
-                                  ),
+                                  Text(_filterUser[index].datetime.toString(),
+                                      style: TextStyle(
+                                        color: Colors.redAccent,
+                                      )),
                                   Text(
                                     _filterUser[index].readerId,
                                     style: TextStyle(color: Colors.grey[600]),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
                                   )
                                 ],
                               ),
                             ),
                             Icon(
                               Icons.account_circle_outlined,
-                              color: Colors.grey[400],
-                              size: 50.0,
+                              color: Colors.grey[500],
+                              size: 60.0,
                             )
                           ],
                         ),

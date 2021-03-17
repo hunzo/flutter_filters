@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.0
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,3 +76,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Prompt
+      fonts:
+        - asset: fonts/Prompt-Regular.ttf
+    - family: Kanit
+      fonts:
+        - asset: fonts/Kanit-Regular.ttf
