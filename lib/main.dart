@@ -90,30 +90,40 @@ class _FilterFlutterState extends State<FilterFlutter> {
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         elevation: 4,
-                        child: Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                _filterUser[index].username,
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.black),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    _filterUser[index].username,
+                                    style: TextStyle(
+                                        fontSize: 18, color: Colors.black),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    _filterUser[index].datetime.toString(),
+                                    style: TextStyle(color: Colors.grey[600]),
+                                  ),
+                                  Text(
+                                    _filterUser[index].readerId,
+                                    style: TextStyle(color: Colors.grey[600]),
+                                  )
+                                ],
                               ),
-                              SizedBox(
-                                height: 6,
-                              ),
-                              Text(
-                                _filterUser[index].datetime.toString(),
-                                style: TextStyle(color: Colors.grey[600]),
-                              ),
-                              Text(
-                                _filterUser[index].readerId,
-                                style: TextStyle(color: Colors.grey[600]),
-                              )
-                            ],
-                          ),
+                            ),
+                            Icon(
+                              Icons.account_circle_outlined,
+                              color: Colors.grey[400],
+                              size: 50.0,
+                            )
+                          ],
                         ),
                       );
                     }))
