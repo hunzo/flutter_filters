@@ -142,6 +142,7 @@ class _FilterFlutterState extends State<FilterFlutter> {
           child: Icon(Icons.refresh),
           onPressed: () {
             _fetchFromApis();
+            FocusScope.of(context).requestFocus(FocusScopeNode());
           },
         ),
       ),
